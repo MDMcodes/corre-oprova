@@ -1,19 +1,24 @@
 receitas = []
 despesas = []
+listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+lucroliq = []
 
-while True:
-    rec = float(input("Digite a receita mensal: "))
-    desp = float(input("Digite a despesa mensal: "))
+for i in range(2):
+    rec = float(input(f"Digite a receita do mês: "))
+    desp = float(input(f"Digite a despesa do mês: "))
     receitas.append(rec)
     despesas.append(desp)
-    opc = input("Adicionar mais?:  (s/n) ").lower()
-    if opc == "n":
-        break
+
 
 #receitas = a, despesas = b
 lucromensal = list(map(lambda a, b: a - b, receitas, despesas))
-print(lucromensal)
-media_anual = sum(lucromensal) #sum = soma de tudo q esta dentro da lista
-print(media_anual / len(lucromensal)) #len = pega a quantidade de elementos dentro da lista
+lucroliq.append(lucromensal)
+print(lucroliq)
+soma = sum(lucromensal) #sum = soma de tudo q esta dentro da lista
+media_anual = (soma / len(lucromensal)) #len = pega a quantidade de elementos dentro da lista
+print(media_anual)
 
-
+#pesquisei pra fazer esse for, n entendi direito
+prejuizos = list(filter(lambda x: x < 0, lucromensal))
+for i, valor in enumerate(prejuizos):  #enumerate = pega a posição e o valor
+    print(f'O prejuízo foi: {valor} no mês de: {listaMeses[lucromensal.index(valor)]}')
