@@ -3,7 +3,7 @@ despesas = []
 listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 lucroliq = []
 
-for i in range(2):
+for i in range(12):
     rec = float(input(f"Digite a receita do mês: "))
     desp = float(input(f"Digite a despesa do mês: "))
     receitas.append(rec)
