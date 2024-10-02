@@ -27,3 +27,12 @@ print(aumento)
 soma = sum(func.values())
 media = (soma / len(func))
 print(media)
+
+# Encontre o funcionário com o maior salário
+# max() retorna a chave (nome do funcionário) com o valor máximo (salário)
+# key=func.get especifica que o valor a ser comparado é o salário (valor do dicionário)
+maiorsal = max(func, key=func.get)
+menorsal = min(func, key=func.get)
+
+print(f"Funcionário com o maior salário: {maiorsal} - R$ {func[maiorsal]}")
+print(f"Funcionário com o menor salário: {menorsal} - R$ {func[menorsal]}")
